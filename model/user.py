@@ -95,3 +95,16 @@ class User:
         except mysql.connector.Error as e:
             conn.close()
             raise Exception(f"Failed to delete user: {str(e)}")
+        
+
+        def edit_user(self, user_id):
+            try:
+                conn = self.db.get_connection()
+                cursor = conn.cursor()
+                cursor.execute("UPDATE  users SET user_ID  WHERE id = %s", (user_id,))
+                conn.commit()
+                conn.close()
+                return "User UPDATED SUCCESFULLY."
+            except mysql.connector.Error as e:
+                conn.close()
+            raise Exception(f"Failed to update user: {str(e)}")

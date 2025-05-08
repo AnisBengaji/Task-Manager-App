@@ -15,4 +15,4 @@ class TaskManager:
         self.db.delete_task(task_id)
 
     def get_all_tasks(self):
-        return self.db.fetch_all_tasks()  # returns [{'id': 1, 'task_name': 'Task A'}, ...]
+        return self.db.fetch_all_tasks()  

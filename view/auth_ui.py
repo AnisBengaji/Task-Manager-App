@@ -115,6 +115,10 @@ class AuthUI:
         self.password_entry.grid(row=2, column=1, pady=5, padx=5)
         self.password_entry.bind("<Return>", lambda event: self.signup())
 
+
+        
+       
+
         # Show Password
         ttk.Checkbutton(
             form_frame, text="Show Password", variable=self.show_password,
